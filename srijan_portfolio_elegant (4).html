@@ -1,0 +1,1096 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Srijan Srivastava | Data Analyst & ML Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --navy: #1a2332;
+            --gold: #d4a574;
+            --cream: #faf8f5;
+            --charcoal: #2d3748;
+            --sage: #7a9d8f;
+            --text-primary: #1a2332;
+            --text-secondary: #5a6672;
+            --border: #e8e5df;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--cream);
+            color: var(--text-primary);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Elegant Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 248, 245, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+            padding: 1.5rem 0;
+        }
+
+        nav .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--gold);
+            transition: width 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--navy);
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 3rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-text .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .hero-text .location {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--sage);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 3rem;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: var(--navy);
+            color: var(--cream);
+            padding: 1rem 2.5rem;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 2px solid var(--navy);
+        }
+
+        .cta-button:hover {
+            background: transparent;
+            color: var(--navy);
+            transform: translateY(-2px);
+        }
+
+        .hero-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .stat-item {
+            padding: 2rem 0;
+            border-top: 2px solid var(--gold);
+        }
+
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Section Styling */
+        section {
+            padding: 8rem 0;
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 6rem;
+        }
+
+        .section-label {
+            color: var(--gold);
+            font-size: 0.875rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .section-description {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 2.5rem;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gold);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(26, 35, 50, 0.08);
+        }
+
+        .skill-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .skill-icon {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .skill-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+        }
+
+        .skill-list {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+
+        /* Projects Section */
+        .projects-list {
+            display: flex;
+            flex-direction: column;
+            gap: 4rem;
+        }
+
+        .project-item {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem;
+            background: white;
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project-item:hover {
+            box-shadow: 0 30px 60px rgba(26, 35, 50, 0.1);
+        }
+
+        .project-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .project-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .project-client {
+            color: var(--sage);
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 3rem;
+            margin-bottom: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .metric {
+            flex: 1;
+        }
+
+        .metric-value {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--navy);
+            display: block;
+            line-height: 1;
+            margin-bottom: 0.5rem;
+        }
+
+        .metric-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .tag {
+            background: var(--cream);
+            color: var(--text-secondary);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            border: 1px solid var(--border);
+        }
+
+        .project-visual {
+            background: var(--navy);
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-visual::before {
+            content: attr(data-number);
+            font-family: 'Playfair Display', serif;
+            font-size: 15rem;
+            font-weight: 900;
+            color: rgba(212, 165, 116, 0.1);
+            position: absolute;
+        }
+
+        /* Experience Timeline */
+        .timeline {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .timeline-item {
+            padding: 3rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .timeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .timeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--navy);
+        }
+
+        .timeline-date {
+            color: var(--gold);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .timeline-company {
+            color: var(--sage);
+            font-size: 1.125rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 700px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--navy);
+            color: var(--cream);
+            padding: 8rem 3rem;
+        }
+
+        .contact-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            color: var(--cream);
+        }
+
+        .contact-subtitle {
+            font-size: 1.25rem;
+            color: rgba(250, 248, 245, 0.7);
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2.5rem 1.5rem;
+            text-decoration: none;
+            color: var(--cream);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .contact-label {
+            font-size: 0.875rem;
+            color: var(--gold);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        .contact-value {
+            font-size: 1rem;
+            font-weight: 500;
+            word-break: break-all;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--charcoal);
+            color: rgba(250, 248, 245, 0.7);
+            padding: 3rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 4rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .project-item {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav .container {
+                padding: 0 1.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-item {
+                padding: 2rem;
+            }
+
+            .project-title {
+                font-size: 2rem;
+            }
+
+            .timeline-header {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-title {
+                font-size: 2.5rem;
+            }
+        }
+
+        /* Smooth Entrance Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">SS</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Expertise</a></li>
+                <li><a href="#projects">Work</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="about">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Srijan Srivastava</h1>
+                    <p class="subtitle">
+                        Data Analyst specializing in supply chain analytics, ML-powered forecasting, 
+                        and scalable cloud solutions. Building systems that transform complex data 
+                        into actionable business decisions.
+                    </p>
+                    <div class="location">🌎 Open to opportunities across US • Remote • Hybrid • On-site</div>
+                    <a href="#contact" class="cta-button">Get in Touch</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">2nd</span>
+                        <span class="stat-label">Project of Year</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">90%</span>
+                        <span class="stat-label">API Reduction</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">5x</span>
+                        <span class="stat-label">Performance Gain</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Award Highlight -->
+    <section style="background: var(--navy); padding: 4rem 0;">
+        <div class="container">
+            <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+                <div style="color: var(--gold); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 1rem;">Recognition</div>
+                <h3 style="font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--cream); margin-bottom: 1rem; line-height: 1.4;">
+                    🏆 Project of the Year — 2nd Place
+                </h3>
+                <p style="color: rgba(250, 248, 245, 0.7); line-height: 1.8; font-size: 1rem;">
+                    Recognized at Kenco's annual Supply Chain Solution Summit for leading a cross-functional project 
+                    integrating Labor Management, Continuous Improvement, Capacity Planning, and Business Intelligence. 
+                    Selected from 30+ projects as joint second place by engineering leadership.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Capabilities</div>
+                <h2 class="section-title">Technical Expertise</h2>
+                <p class="section-description">
+                    Comprehensive skill set spanning data engineering, analytics, machine learning, 
+                    and cloud infrastructure.
+                </p>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon">⚙️</div>
+                    <h3 class="skill-title">Data Engineering</h3>
+                    <div class="skill-list">
+                        Python • SQL • ETL Pipelines<br>
+                        AWS Redshift • Snowflake<br>
+                        DynamoDB • Spark • Prefect
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">📊</div>
+                    <h3 class="skill-title">Analytics & BI</h3>
+                    <div class="skill-list">
+                        Tableau • Power BI • QlikSense<br>
+                        Data Modeling • KPI Tracking<br>
+                        Statistical Analysis
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🤖</div>
+                    <h3 class="skill-title">Machine Learning</h3>
+                    <div class="skill-list">
+                        TensorFlow • scikit-learn<br>
+                        Random Forest • XGBoost<br>
+                        ARIMA • Time Series • NLP
+                    </div>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">☁️</div>
+                    <h3 class="skill-title">Cloud & DevOps</h3>
+                    <div class="skill-list">
+                        AWS • Azure • Docker<br>
+                        Kubernetes • CI/CD<br>
+                        SageMaker • FastAPI
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" style="background: white;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Portfolio</div>
+                <h2 class="section-title">Selected Projects</h2>
+                <p class="section-description">
+                    Impactful solutions across Fortune 500 clients delivering measurable business results.
+                </p>
+            </div>
+
+            <div class="projects-list">
+                <!-- Project 1 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-number">01</div>
+                        <h3 class="project-title">KencoGPT — AI Document Assistant</h3>
+                        <div class="project-client">Kenco Logistics</div>
+                        <p class="project-description">
+                            Built custom GPT-powered document query system enabling natural language questions about 
+                            Labor Management System (LMS) files. Integrated OpenAI API with AWS S3 storage for 
+                            Retrieval Augmented Generation (RAG), allowing users to upload files and receive 
+                            intelligent, context-aware responses about warehouse operations data.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">LLM</span>
+                                <span class="metric-label">OpenAI API</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">RAG</span>
+                                <span class="metric-label">Architecture</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">OpenAI</span>
+                            <span class="tag">LLM</span>
+                            <span class="tag">AWS S3</span>
+                            <span class="tag">RAG</span>
+                            <span class="tag">Python</span>
+                        </div>
+                    </div>
+                    <div class="project-visual" data-number="01"></div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-number">02</div>
+                        <h3 class="project-title">Workforce AI Dashboard</h3>
+                        <div class="project-client">Kenco Logistics</div>
+                        <p class="project-description">
+                            Built Python/Dash application enabling real-time FTE calculations and volume 
+                            forecasting for warehouse operations. Optimized DynamoDB architecture reducing 
+                            API calls by 90% and improving load times 5x.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label">API Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">5x</span>
+                                <span class="metric-label">Faster</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Dash</span>
+                            <span class="tag">DynamoDB</span>
+                            <span class="tag">Forecasting</span>
+                        </div>
+                    </div>
+                    <div class="project-visual" data-number="02"></div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-number">03</div>
+                        <h3 class="project-title">Enterprise ETL Pipeline</h3>
+                        <div class="project-client">Kenco × Fortune 500</div>
+                        <p class="project-description">
+                            Migrated hundreds of complex warehouse queries from legacy systems to AWS Redshift 
+                            and Snowflake. Built automated ETL pipelines for Pepsi, Samsung, and Whirlpool 
+                            processing 500K+ records daily.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">500K+</span>
+                                <span class="metric-label">Daily Records</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">90%</span>
+                                <span class="metric-label">Time Saved</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">AWS Redshift</span>
+                            <span class="tag">Snowflake</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">ETL</span>
+                        </div>
+                    </div>
+                    <div class="project-visual" data-number="03"></div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-number">04</div>
+                        <h3 class="project-title">Performance Analytics</h3>
+                        <div class="project-client">Kenco × Reckitt</div>
+                        <p class="project-description">
+                            Conducted comprehensive correlation and causation analysis on both daily and weekly 
+                            warehouse performance data. Identified critical KPIs driving operational success 
+                            and delivered actionable recommendations for warehouse teams.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">Daily</span>
+                                <span class="metric-label">Data Level</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">Weekly</span>
+                                <span class="metric-label">Data Level</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Statistics</span>
+                            <span class="tag">Correlation</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="project-visual" data-number="04"></div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="project-item">
+                    <div class="project-content">
+                        <div class="project-number">05</div>
+                        <h3 class="project-title">ML Testing Optimization</h3>
+                        <div class="project-client">Bosch AI Center</div>
+                        <p class="project-description">
+                            Developed machine learning application reducing manufacturing testing times by 40%. 
+                            Trained Random Forest and SVM models achieving 88% AUC accuracy. Deployed on Azure 
+                            with Docker and Kubernetes.
+                        </p>
+                        <div class="project-metrics">
+                            <div class="metric">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Time Reduction</span>
+                            </div>
+                            <div class="metric">
+                                <span class="metric-value">88%</span>
+                                <span class="metric-label">Accuracy</span>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">Azure</span>
+                            <span class="tag">Kubernetes</span>
+                            <span class="tag">StreamLit</span>
+                        </div>
+                    </div>
+                    <div class="project-visual" data-number="05"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">Career</div>
+                <h2 class="section-title">Professional Journey</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Data Analyst</h3>
+                        <span class="timeline-date">Sep 2022 — Present</span>
+                    </div>
+                    <div class="timeline-company">Kenco Logistics LLC</div>
+                    <p class="timeline-description">
+                        Leading data analytics initiatives for warehouse operations across multiple Fortune 500 
+                        clients. Migrated hundreds of complex queries to modern cloud platforms, built AI-powered 
+                        dashboards, and developed ETL pipelines processing 500K+ records daily.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Data Scientist</h3>
+                        <span class="timeline-date">Jul 2022 — Sep 2022</span>
+                    </div>
+                    <div class="timeline-company">Acquco</div>
+                    <p class="timeline-description">
+                        Worked with AWS cloud and Python under head of Data Science. Extracted Amazon order data, 
+                        analyzed financial data, and built outlier detection systems with automated Slack notifications.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">ML Engineer Intern</h3>
+                        <span class="timeline-date">Jun 2021 — Dec 2021</span>
+                    </div>
+                    <div class="timeline-company">Bosch Center for AI</div>
+                    <p class="timeline-description">
+                        Developed scalable ML application reducing manufacturing testing times by 40%. Performed 
+                        big data analysis using Hadoop and Spark. Deployed on Azure with Docker and Kubernetes.
+                    </p>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-header">
+                        <h3 class="timeline-title">Software Engineer</h3>
+                        <span class="timeline-date">Jun 2017 — Dec 2019</span>
+                    </div>
+                    <div class="timeline-company">CedCommerce</div>
+                    <p class="timeline-description">
+                        Developed e-commerce integration apps for BigCommerce, Shopify, and Magento. Built marketplace 
+                        integrations enabling multi-platform product management and order processing.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Projects Section -->
+    <section style="background: var(--cream); padding: 8rem 0;">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-label">More Work</div>
+                <h2 class="section-title">Academic & Early Career</h2>
+                <p class="section-description">
+                    Additional projects from graduate studies and software engineering roles.
+                </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 2rem; max-width: 1400px; margin: 0 auto;">
+                <!-- Project 1 -->
+                <div style="background: white; padding: 2.5rem; border: 1px solid var(--border);">
+                    <div style="color: var(--gold); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">Northeastern University</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">Flight Fare Prediction</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Predicted flight fare prices using Linear Regression on Bureau of Transportation Statistics data 
+                        from 2019. Achieved 93% accuracy after feature engineering, categorical encoding, and log transform 
+                        for skewness adjustment.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">Python</span>
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag">Feature Engineering</span>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div style="background: white; padding: 2.5rem; border: 1px solid var(--border);">
+                    <div style="color: var(--gold); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">CedCommerce</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">AliExpress Dropshipping Analytics</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Built product import and analytics system processing order-level and product-level data from 
+                        AliExpress for dropshipping automation. Analyzed inventory patterns, synchronized real-time 
+                        availability data, and tracked product performance metrics across BigCommerce and Shopify platforms.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">Data Analysis</span>
+                        <span class="tag">PHP</span>
+                        <span class="tag">E-commerce Analytics</span>
+                        <span class="tag">API Integration</span>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div style="background: white; padding: 2.5rem; border: 1px solid var(--border);">
+                    <div style="color: var(--gold); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">CedCommerce</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">Newegg Marketplace Analytics</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Developed marketplace integration analyzing product-level and order-level data from BigCommerce 
+                        to Newegg.com. Implemented dynamic pricing algorithms based on competitive analysis, tracked 
+                        inventory synchronization metrics, and built dashboards for bulk product upload monitoring.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">E-commerce Analytics</span>
+                        <span class="tag">Dynamic Pricing</span>
+                        <span class="tag">Yii2</span>
+                        <span class="tag">Dashboard Development</span>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div style="background: white; padding: 2.5rem; border: 1px solid var(--border);">
+                    <div style="color: var(--gold); font-size: 0.875rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 1rem;">CedCommerce</div>
+                    <h3 style="font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--navy); margin-bottom: 1rem;">Walmart Marketplace Data Pipeline</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.8; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        Built data pipeline processing product-level and order-level information between BigCommerce 
+                        and Walmart marketplace. Developed automated inventory price synchronization via webhooks, 
+                        created sales performance dashboards, and analyzed order flow patterns for optimization insights.
+                    </p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="tag">Data Pipelines</span>
+                        <span class="tag">Sales Analytics</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Webhooks</span>
+                        <span class="tag">MVC</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-content">
+            <h2 class="contact-title">Let's Connect</h2>
+            <p class="contact-subtitle">
+                Open to opportunities in data analytics, engineering, and machine learning.
+            </p>
+
+            <div class="contact-grid">
+                <a href="mailto:srijansrivastava11@gmail.com" class="contact-card">
+                    <span class="contact-icon">✉</span>
+                    <div class="contact-label">Email</div>
+                    <div class="contact-value">srijansrivastava11@gmail.com</div>
+                </a>
+
+                <a href="tel:+14253622214" class="contact-card">
+                    <span class="contact-icon">☎</span>
+                    <div class="contact-label">Phone</div>
+                    <div class="contact-value">(425) 362-2214</div>
+                </a>
+
+                <a href="https://www.linkedin.com/in/srijan-srivastava-b8b34011a/" target="_blank" class="contact-card">
+                    <span class="contact-icon">💼</span>
+                    <div class="contact-label">LinkedIn</div>
+                    <div class="contact-value">Connect</div>
+                </a>
+
+                <a href="https://github.com/srijansrivastava11/" target="_blank" class="contact-card">
+                    <span class="contact-icon">💻</span>
+                    <div class="contact-label">GitHub</div>
+                    <div class="contact-value">View Code</div>
+                </a>
+            </div>
+        </div>
+  
